@@ -13,5 +13,11 @@ datasource db {
   provider = "postgresql"
 }
 
+model Signature{
+  id        Int       @id @default(autoincrement())
+  name      String
+  message   String
+  createdAt DateTime  @default(now())
+}
 
 
