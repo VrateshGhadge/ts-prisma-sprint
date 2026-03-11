@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
+    "rootDir": ".",
     "outDir": "./dist",
     "module": "ESNext",
     "moduleResolution": "bundler",
@@ -10,5 +10,5 @@
     "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo",
     "types": ["node"],
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "generated/**/*"]
 }
