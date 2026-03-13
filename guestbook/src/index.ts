@@ -57,6 +57,14 @@ async function deleteSignature(id: number) {
   })
 }
 
+ async function getSignaturesPaginated(page: number = 1, pageSize: number = 10) {
+  return await prisma.signature.findMany({
+    skip: (page - 1) * pageSize,
+    take: pageSize,
+    orderBy: { createdAt: 'desc' },
+  })
+}
+
 async function main() {
   const entry1 = await addSignature('Yash', 'First entry for the GitHub commit!')
   const entry2 = await addSignature('Alex', 'Love the clean Postgres setup.')
@@ -86,3 +94,5 @@ main()
     await prisma.$disconnect()
     process.exit(1)
   })
+
+ 
