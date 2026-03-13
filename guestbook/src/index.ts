@@ -65,6 +65,10 @@ async function deleteSignature(id: number) {
   })
 }
 
+async function getSignatureCount() {
+  return await prisma.signature.count()
+}
+
 async function main() {
   const entry1 = await addSignature('Yash', 'First entry for the GitHub commit!')
   const entry2 = await addSignature('Alex', 'Love the clean Postgres setup.')
